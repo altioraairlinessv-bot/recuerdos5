@@ -1,0 +1,1204 @@
+/* ========================================
+   1. CONFIGURACIÓN GENERAL
+======================================== */
+
+:root {
+  --background: #080b18;
+  --background-light: #10172b;
+  --card: rgba(16, 23, 43, 0.82);
+  --text: #f4f1ed;
+  --text-muted: #b9bfd0;
+  --gold: #d9bd86;
+  --gold-light: #f0dcb3;
+  --blue: #263b68;
+  --border: rgba(217, 189, 134, 0.2);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #17213c 0%,
+      var(--background) 55%,
+      #050711 100%
+    );
+
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.8;
+}
+
+/* ========================================
+   2. FONDO ANIMADO
+======================================== */
+
+.background-effects {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stars {
+  position: absolute;
+  inset: -50%;
+
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.8), transparent),
+    radial-gradient(2px 2px at 70% 20%, rgba(217,189,134,.8), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,.7), transparent),
+    radial-gradient(2px 2px at 85% 65%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1px 1px at 10% 85%, rgba(217,189,134,.8), transparent),
+    radial-gradient(2px 2px at 55% 45%, rgba(255,255,255,.5), transparent);
+
+  background-size: 350px 350px;
+  opacity: 0.55;
+  animation: starsMovement 65s linear infinite;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(217,189,134,.4) 1px, transparent 2px);
+
+  background-size: 120px 120px;
+  opacity: 0.2;
+  animation: particlesMovement 35s ease-in-out infinite alternate;
+}
+
+.glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.12;
+}
+
+.glow-one {
+  top: -150px;
+  left: -150px;
+  background: #536da7;
+  animation: glowMovement 18s ease-in-out infinite alternate;
+}
+
+.glow-two {
+  right: -180px;
+  bottom: -150px;
+  background: #b9945b;
+  animation: glowMovement 22s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes starsMovement {
+  from { transform: translateY(0); }
+  to { transform: translateY(350px); }
+}
+
+@keyframes particlesMovement {
+  from {
+    transform: translateY(0);
+    opacity: 0.12;
+  }
+
+  to {
+    transform: translateY(-35px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes glowMovement {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(60px, 50px) scale(1.2); }
+}
+
+/* ========================================
+   3. CONTENEDOR PRINCIPAL
+======================================== */
+
+.main-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 20px;
+}
+
+/* ========================================
+   4. ESCENAS
+======================================== */
+
+.scene {
+  width: 100%;
+  max-width: 850px;
+  min-height: 450px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: sceneAppear 0.8s ease both;
+}
+
+.scene[hidden] {
+  display: none !important;
+}
+
+.scene-content {
+  position: relative;
+  width: 100%;
+  padding: 65px 70px;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19, 28, 51, 0.92),
+      rgba(9, 14, 29, 0.92)
+    );
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes sceneAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   5. TEXTOS
+======================================== */
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: var(--gold);
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--gold-light);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+h1 {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: clamp(27px, 4vw, 38px);
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+p {
+  max-width: 680px;
+  margin: 0 auto 18px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   6. PORTADA
+======================================== */
+
+.cover-content {
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+.cover-content p {
+  margin-bottom: 35px;
+  font-size: 17px;
+}
+
+.bottom-note {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 100%;
+
+  color: rgba(217, 189, 134, 0.55);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-align: center;
+
+  transform: translateX(-50%);
+}
+
+/* ========================================
+   7. BOTONES PRINCIPALES
+======================================== */
+
+.main-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 52px;
+  padding: 14px 27px;
+
+  border: 1px solid rgba(217, 189, 134, 0.6);
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #d9bd86, #b99a66);
+  color: #111626;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.main-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(217, 189, 134, 0.22);
+}
+
+.main-button:active {
+  transform: scale(0.97);
+}
+
+.main-button:focus-visible,
+.back-button:focus-visible,
+.hidden-button:focus-visible,
+.music-button:focus-visible,
+.photo-card:focus-visible,
+.audio-play-button:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+.button-arrow {
+  font-size: 18px;
+}
+
+/* ========================================
+   8. BOTÓN VOLVER
+======================================== */
+
+.back-button {
+  display: block;
+  margin: 28px auto 0;
+  padding: 9px 16px;
+
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--gold-light);
+}
+
+/* ========================================
+   9. BLOQUE DE CIERRE
+======================================== */
+
+blockquote {
+  max-width: 650px;
+  margin: 35px auto;
+  padding: 25px;
+
+  border-left: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+
+  background: rgba(217, 189, 134, 0.045);
+  color: var(--gold-light);
+
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.closing-note {
+  margin-top: 30px;
+  color: var(--gold-light);
+}
+
+/* ========================================
+   10. BOTÓN SECRETO
+======================================== */
+
+.hidden-button {
+  display: block;
+  margin: 45px auto 0;
+  padding: 8px 14px;
+
+  border: none;
+  background: transparent;
+  color: rgba(217, 189, 134, 0.5);
+
+  font-family: Georgia, serif;
+  font-size: 12px;
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hidden-button:hover {
+  color: var(--gold-light);
+}
+
+/* ========================================
+   11. FORMULARIOS
+======================================== */
+
+.secret-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  max-width: 380px;
+  margin: 30px auto;
+}
+
+.secret-form label {
+  color: var(--gold-light);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.secret-form input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: rgba(5, 9, 20, 0.75);
+  color: var(--text);
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.secret-form input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(217, 189, 134, 0.1);
+}
+
+.secret-form input::placeholder {
+  color: #778098;
+}
+
+.secret-form input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+.form-message {
+  margin: 5px auto 0;
+  color: #e9a2a2;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* ========================================
+   12. MENSAJES REVELADOS
+======================================== */
+
+.revealed-message {
+  width: 100%;
+  margin-top: 35px;
+  padding: 30px 25px;
+
+  border: 1px solid rgba(217, 189, 134, 0.16);
+  border-radius: 14px;
+
+  background: rgba(217, 189, 134, 0.045);
+  animation: messageAppear 0.8s ease both;
+}
+
+.revealed-message[hidden] {
+  display: none !important;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   13. SECCIONES DE RECUERDOS
+======================================== */
+
+#memories-message {
+  text-align: center;
+}
+
+.memory-part {
+  max-width: 650px;
+  margin: 0 auto 32px;
+  padding: 0 0 25px;
+
+  border-bottom: 1px solid rgba(217, 189, 134, 0.13);
+}
+
+.memory-part:last-of-type {
+  margin-bottom: 35px;
+}
+
+.memory-part h3 {
+  color: var(--gold-light);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.memory-part p {
+  margin-bottom: 12px;
+}
+
+.memory-part p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   14. GALERÍA DE FOTOGRAFÍAS
+======================================== */
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  width: 100%;
+  max-width: 620px;
+
+  margin: 40px auto 20px;
+  padding: 10px 0;
+}
+
+.photo-card {
+  position: relative;
+  display: block;
+
+  width: clamp(130px, 28%, 170px);
+  aspect-ratio: 4 / 5;
+
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+
+  cursor: pointer;
+  perspective: 1000px;
+
+  animation: photoFloat 4s ease-in-out infinite;
+}
+
+.photo-card:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.photo-card:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+@keyframes photoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.photo-card-inner {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+
+  transition: transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+
+.photo-card.is-flipped .photo-card-inner {
+  transform: rotateY(180deg);
+}
+
+.photo-card-back,
+.photo-card-front {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border: 2px solid rgba(217, 189, 134, 0.75);
+  border-radius: 12px;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(217, 189, 134, 0.1);
+}
+
+.photo-card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #263b68,
+      #10172b 65%,
+      #080b18
+    );
+}
+
+.photo-card-back::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+
+  border: 1px solid rgba(217, 189, 134, 0.4);
+  border-radius: 7px;
+}
+
+.photo-card-back::after {
+  content: "✦";
+
+  color: var(--gold-light);
+  font-size: 43px;
+
+  text-shadow:
+    0 0 12px rgba(217, 189, 134, 0.7),
+    0 0 25px rgba(217, 189, 134, 0.35);
+}
+
+.photo-card-front {
+  transform: rotateY(180deg);
+  padding: 5px;
+
+  background: linear-gradient(145deg, #f0dcb3, #b99a66);
+}
+
+.photo-card-front img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.photo-hint {
+  margin: 15px auto 0;
+
+  color: rgba(217, 189, 134, 0.75);
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   15. REPRODUCTOR DE AUDIO
+======================================== */
+
+.special-audio {
+  max-width: 430px;
+
+  margin: 35px auto 10px;
+  padding: 24px 20px;
+
+  border: 1px solid rgba(217, 189, 134, 0.25);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 189, 134, 0.09),
+      rgba(16, 23, 43, 0.7)
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.special-audio p {
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.audio-play-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 165px;
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  border: 1px solid rgba(217, 189, 134, 0.6);
+  border-radius: 30px;
+
+  background: rgba(217, 189, 134, 0.12);
+  color: var(--gold-light);
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.audio-play-button:hover {
+  background: rgba(217, 189, 134, 0.22);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 20px rgba(217, 189, 134, 0.12);
+}
+
+.audio-play-button:active {
+  transform: scale(0.97);
+}
+
+.audio-play-icon {
+  font-size: 17px;
+}
+
+/* ========================================
+   16. ÚLTIMA PUERTA
+======================================== */
+
+.last-secret-content {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+#lock-screen,
+#choice-screen,
+#password-screen,
+#memories-message,
+#support-message {
+  width: 100%;
+  animation: sceneAppear 0.7s ease both;
+}
+
+#lock-screen[hidden],
+#choice-screen[hidden],
+#password-screen[hidden],
+#memories-message[hidden],
+#support-message[hidden] {
+  display: none !important;
+}
+
+/* ========================================
+   17. CANDADO BRILLANTE
+======================================== */
+
+.lock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 135px;
+  height: 135px;
+
+  margin: 35px auto;
+
+  border: 1px solid rgba(217, 189, 134, 0.25);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(217, 189, 134, 0.18),
+    rgba(217, 189, 134, 0.02) 70%
+  );
+
+  box-shadow:
+    0 0 25px rgba(217, 189, 134, 0.12),
+    inset 0 0 25px rgba(217, 189, 134, 0.05);
+
+  animation: lockGlow 3s ease-in-out infinite;
+}
+
+.lock-icon {
+  display: block;
+  font-size: 65px;
+
+  filter:
+    drop-shadow(0 0 12px rgba(217, 189, 134, 0.45));
+
+  animation: lockFloat 3s ease-in-out infinite;
+}
+
+@keyframes lockGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(217, 189, 134, 0.12),
+      inset 0 0 20px rgba(217, 189, 134, 0.04);
+  }
+
+  50% {
+    box-shadow:
+      0 0 40px rgba(217, 189, 134, 0.3),
+      inset 0 0 30px rgba(217, 189, 134, 0.1);
+  }
+}
+
+@keyframes lockFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* ========================================
+   18. ANIMACIÓN AL ABRIR
+======================================== */
+
+.lock-open {
+  animation: unlockAnimation 0.8s ease forwards;
+}
+
+@keyframes unlockAnimation {
+  0% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2) rotate(-8deg);
+    opacity: 0.8;
+
+    filter:
+      drop-shadow(0 0 25px var(--gold));
+  }
+
+  100% {
+    transform: scale(0.8) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   19. ELECCIÓN DE LAS DOS PUERTAS
+======================================== */
+
+#choice-screen h2,
+#password-screen h2 {
+  margin-top: 20px;
+}
+
+.choice-button {
+  display: flex;
+
+  width: 100%;
+  max-width: 420px;
+
+  margin: 15px auto;
+  padding: 15px 20px;
+
+  white-space: normal;
+  line-height: 1.5;
+}
+
+#choice-screen .main-button {
+  min-height: 58px;
+}
+
+#choice-screen .main-button:hover {
+  box-shadow:
+    0 0 25px rgba(217, 189, 134, 0.2);
+}
+
+/* ========================================
+   20. PANTALLA DE CONTRASEÑA
+======================================== */
+
+#password-screen .secret-form {
+  margin-top: 30px;
+}
+
+#password-screen .back-button {
+  margin-top: 25px;
+}
+
+#last-door-error {
+  max-width: 100%;
+}
+
+#lock-closed-message {
+  margin-top: 25px;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+#continue-choice-button {
+  margin-top: 20px;
+}
+
+/* ========================================
+   21. CERRAR LA ÚLTIMA PUERTA
+======================================== */
+
+.finish-door-button {
+  margin-top: 25px;
+}
+
+/* ========================================
+   22. BOTÓN DE MÚSICA
+======================================== */
+
+.music-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(217, 189, 134, 0.5);
+  border-radius: 50%;
+
+  background: rgba(16, 23, 43, 0.9);
+  color: var(--gold-light);
+
+  font-size: 21px;
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.3);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.1);
+  background: rgba(38, 59, 104, 0.95);
+}
+
+/* ========================================
+   23. RESPONSIVE - TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+
+  .main-container {
+    padding: 35px 18px;
+  }
+
+  .scene-content {
+    padding: 50px 35px;
+  }
+
+  .cover-content {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .photo-gallery {
+    gap: 16px;
+  }
+
+}
+
+/* ========================================
+   24. RESPONSIVE - TELÉFONOS
+======================================== */
+
+@media (max-width: 480px) {
+
+  body {
+    line-height: 1.75;
+  }
+
+  .main-container {
+    min-height: 100vh;
+    padding: 22px 13px;
+  }
+
+  .scene {
+    min-height: auto;
+  }
+
+  .scene-content {
+    padding: 38px 20px;
+    border-radius: 16px;
+  }
+
+  .cover-content {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .eyebrow {
+    margin-bottom: 20px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 27px;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .cover-content p {
+    font-size: 15px;
+  }
+
+  .main-button {
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 16px;
+
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .back-button {
+    margin-top: 22px;
+  }
+
+  blockquote {
+    margin: 28px auto;
+    padding: 18px;
+    font-size: 16px;
+  }
+
+  .revealed-message {
+    padding: 23px 15px;
+  }
+
+  .secret-form {
+    width: 100%;
+  }
+
+  .secret-form input {
+    min-height: 48px;
+    font-size: 14px;
+  }
+
+  .lock-container {
+    width: 115px;
+    height: 115px;
+    margin: 28px auto;
+  }
+
+  .lock-icon {
+    font-size: 55px;
+  }
+
+  .choice-button {
+    min-height: 58px;
+    padding: 13px 15px;
+  }
+
+  .photo-gallery {
+    gap: 15px;
+    max-width: 360px;
+  }
+
+  .photo-card {
+    width: min(42%, 155px);
+  }
+
+  .photo-hint {
+    font-size: 11px;
+  }
+
+  .special-audio {
+    padding: 21px 14px;
+  }
+
+  .audio-play-button {
+    min-height: 48px;
+    width: 100%;
+  }
+
+  .music-button {
+    right: 15px;
+    bottom: 15px;
+    width: 43px;
+    height: 43px;
+  }
+
+  .bottom-note {
+    bottom: 12px;
+    font-size: 9px;
+  }
+
+}
+
+/* ========================================
+   25. PANTALLAS MUY PEQUEÑAS
+======================================== */
+
+@media (max-width: 350px) {
+
+  .scene-content {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .main-button {
+    font-size: 11px;
+  }
+
+  .photo-gallery {
+    gap: 12px;
+  }
+
+  .photo-card {
+    width: min(43%, 135px);
+  }
+
+}
+
+/* ========================================
+   26. ACCESIBILIDAD
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}

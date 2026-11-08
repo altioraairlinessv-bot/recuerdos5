@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="Hay recuerdos que siempre conservan un lugar especial.">
+
+  <title>Un recuerdo especial</title>
+
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+
+  <!-- FONDO ANIMADO -->
+  <div class="background-effects" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="particles"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+  </div>
+
+  <main class="main-container">
+
+    <!-- ESCENA 1: PORTADA -->
+    <section class="scene active" id="scene-1">
+
+      <div class="scene-content cover-content">
+
+        <span class="eyebrow">UN PEQUEÑO VIAJE POR LOS RECUERDOS</span>
+
+        <h1>Hay personas que nunca dejan de significar</h1>
+
+        <p>
+          Hay cosas que quizás nunca encontramos la manera correcta
+          de decir, sentimientos que el tiempo no borra y personas
+          que, aunque ya no estén a nuestro lado, siguen siendo importantes.
+        </p>
+
+        <button class="main-button" data-go="scene-2">
+          Descubrir lo que permanece
+          <span class="button-arrow">→</span>
+        </button>
+
+      </div>
+
+      <span class="bottom-note">
+        Una pequeña historia hecha de recuerdos
+      </span>
+
+    </section>
+
+
+    <!-- ESCENA 2: RECUERDOS -->
+    <section class="scene" id="scene-2" hidden>
+
+      <div class="scene-content">
+
+        <span class="eyebrow">01 — LOS RECUERDOS</span>
+
+        <h2>Hay momentos que no vuelven, pero tampoco se olvidan.</h2>
+
+        <p>
+          Es extraño cómo pasa el tiempo. Hay momentos que alguna vez
+          fueron nuestro presente y que, sin darnos cuenta, terminaron
+          convirtiéndose en recuerdos.
+        </p>
+
+        <p>
+          Conversaciones que ya no se repiten, sonrisas que ahora viven
+          en nuestra memoria y pequeños instantes que quizás en aquel
+          momento no parecían tan importantes.
+        </p>
+
+        <p>
+          A veces dan ganas de volver por un instante, no para cambiar
+          nada, sino simplemente para sentir una vez más lo bonito que
+          fue vivirlos.
+        </p>
+
+        <p>
+          Porque, aunque el tiempo siga avanzando y las circunstancias
+          cambien, hay recuerdos que siempre conservarán algo especial.
+        </p>
+
+        <button class="main-button" data-go="scene-3">
+          Hay recuerdos que merecen quedarse →
+        </button>
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- ESCENA 3: LO QUE SIGNIFICÓ -->
+    <section class="scene" id="scene-3" hidden>
+
+      <div class="scene-content">
+
+        <span class="eyebrow">02 — LAS PERSONAS</span>
+
+        <h2>Hay personas que llegan y dejan huellas.</h2>
+
+        <p>
+          A lo largo de la vida conocemos a muchas personas, pero son
+          pocas las que consiguen dejar algo verdaderamente especial
+          en nosotros.
+        </p>
+
+        <p>
+          Personas que, sin proponérselo, hacen que ciertos días sean
+          diferentes, que una simple conversación se convierta en algo
+          que esperamos y que momentos aparentemente normales terminen
+          teniendo un significado enorme.
+        </p>
+
+        <p>
+          Y quizás eso es lo más bonito de haber coincidido con alguien:
+          descubrir que una persona puede llegar a significar tanto sin
+          siquiera imaginarlo.
+        </p>
+
+        <p>
+          No todas las personas están destinadas a quedarse, pero eso
+          no significa que su paso por nuestra vida haya sido menos
+          importante.
+        </p>
+
+        <button class="main-button" data-go="scene-4">
+          Lo que permanece también importa →
+        </button>
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- ESCENA 4: ACEPTAR -->
+    <section class="scene" id="scene-4" hidden>
+
+      <div class="scene-content">
+
+        <span class="eyebrow">03 — ACEPTAR</span>
+
+        <h2>A veces, querer también significa aceptar.</h2>
+
+        <p>
+          Con el tiempo entendemos que no todo sucede como alguna vez
+          lo imaginamos.
+        </p>
+
+        <p>
+          Hay caminos que se separan, historias que llegan a su final
+          y personas con las que, por más que hubiéramos querido, ya no
+          podemos compartir el mismo camino.
+        </p>
+
+        <p>
+          Y aunque aceptar ciertas cosas no siempre resulta sencillo,
+          también aprendemos que no podemos detener el tiempo ni cambiar
+          aquello que ya pasó.
+        </p>
+
+        <p>
+          A veces, lo más bonito que podemos hacer es guardar lo vivido
+          con cariño, aceptar el presente y permitir que cada persona
+          continúe escribiendo su propia historia.
+        </p>
+
+        <p>
+          Porque reconocer que algo terminó no significa que haya dejado
+          de ser importante.
+        </p>
+
+        <button class="main-button" data-go="scene-5">
+          Y aun así, vale la pena recordar →
+        </button>
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- ESCENA 5: LO QUE SE CONSERVA -->
+    <section class="scene" id="scene-5" hidden>
+
+      <div class="scene-content">
+
+        <span class="eyebrow">04 — LO QUE QUEDA</span>
+
+        <h2>Hay cosas que el corazón decide conservar.</h2>
+
+        <p>
+          Quizás no todo salió como alguna vez se esperaba, quizás
+          quedaron palabras sin decir y momentos que nunca volvieron
+          a repetirse.
+        </p>
+
+        <p>
+          Pero entre tantas cosas que cambian con el tiempo, hay algo
+          que permanece: el cariño por aquello que alguna vez nos
+          hizo felices.
+        </p>
+
+        <p>
+          Porque no todos los recuerdos necesitan convertirse en
+          tristeza, ni todas las historias necesitan continuar para
+          haber sido importantes.
+        </p>
+
+        <p>
+          Hay personas que siempre recordaremos con una sonrisa,
+          momentos que volveríamos a vivir si pudiéramos y sentimientos
+          que, aunque cambien con los años, siempre tendrán un significado
+          especial.
+        </p>
+
+        <p>
+          Y si algo merece quedarse, es el agradecimiento por haberlo vivido.
+        </p>
+
+        <button class="main-button" data-go="scene-6">
+          Un último pensamiento... →
+        </button>
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- ESCENA 6: CIERRE -->
+    <section class="scene" id="scene-6" hidden>
+
+      <div class="scene-content final-content">
+
+        <span class="eyebrow">05 — UN ÚLTIMO PENSAMIENTO</span>
+
+        <h2>Y si algo quiero que permanezca...</h2>
+
+        <p>
+          Al final, la vida sigue, los días pasan y las personas toman
+          caminos diferentes.
+        </p>
+
+        <p>
+          Quizás nunca volvamos a vivir aquellos momentos, quizás algunas
+          cosas solamente existan en nuestros recuerdos y quizás el futuro
+          tenga preparadas historias completamente distintas.
+        </p>
+
+        <p>
+          Pero hay algo que quiero dejar claro: nunca voy a considerar
+          un error haber coincidido con alguien que llegó a significar
+          tanto.
+        </p>
+
+        <p>
+          Porque, aunque ya no sea posible compartir el mismo camino,
+          eso no cambia lo especial que fue haberlo recorrido durante
+          un tiempo.
+        </p>
+
+        <p>
+          No todas las historias necesitan un final feliz para merecer
+          ser recordadas con cariño.
+        </p>
+
+        <blockquote>
+          Hay personas que dejan de estar en nuestra vida, pero nunca
+          dejan de formar parte de nuestra historia.
+        </blockquote>
+
+        <p class="closing-note">
+          Gracias por haber sido parte de una historia que siempre tendrá
+          un lugar especial en mis recuerdos. 💛
+        </p>
+
+        <button
+          class="hidden-button"
+          id="easter-egg-trigger"
+          type="button"
+          aria-label="Abrir un pequeño secreto"
+        >
+          psst...
+        </button>
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ESCENA 7: PEQUEÑO SECRETO -->
+    <section class="scene" id="scene-7" hidden>
+
+      <div class="scene-content secret-content">
+
+        <span class="eyebrow">UN PEQUEÑO SECRETO</span>
+
+        <h2>Vaya, vaya...</h2>
+
+        <p>Bien, lo encontraste. 06/06/2025 👀</p>
+
+        <p>
+          Ingresa la fecha para desbloquear este pequeño secreto.
+        </p>
+
+        <form id="secret-form" class="secret-form">
+
+          <label for="secret-date">Una fecha especial</label>
+
+          <input
+            type="date"
+            id="secret-date"
+            name="secret-date"
+            required
+          >
+
+          <button class="main-button" type="submit">
+            Desbloquear
+          </button>
+
+          <p id="secret-error" class="form-message" role="alert" hidden>
+            Esa no es la fecha. Inténtalo nuevamente.
+          </p>
+
+        </form>
+
+        <div id="secret-message" class="revealed-message" hidden>
+
+           <p>Espero que estés bien, que la vida te esté tratando bonito
+            y que últimamente hayas tenido muchos motivos para sonreír.
+          </p>
+
+          <p>
+            Hace tiempo que no sé cómo van las cosas por tu vida, pero
+            de verdad espero que estés cumpliendo tus metas, que estés
+            rodeada de personas que te hagan bien y que nunca te falten
+            razones para ser feliz.
+          </p>
+
+          <p>
+            No sé cómo te encuentres actualmente ni qué cosas estén
+            pasando por tu mundo, pero espero sinceramente que todo
+            marche bien.
+          </p>
+
+          <p>
+            Cuídate mucho, sigue siendo esa persona que tiene tantas
+            cosas bonitas por delante y nunca dejes de perseguir
+            aquello que te hace feliz.
+          </p>
+
+          <p>
+            Y bueno... hasta aquí llegó este pequeño secreto. Espero
+            haberte sacado aunque sea una pequeña sonrisa.
+          </p>
+
+          <button class="main-button" data-go="scene-8">
+            Todavía queda algo más... →
+          </button>
+
+        </div>
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- ESCENA 8: ÚLTIMA PUERTA -->
+    <section class="scene" id="scene-8" hidden>
+
+      <div class="scene-content last-secret-content">
+
+        <span class="eyebrow">LA ÚLTIMA PUERTA</span>
+
+        <h2>Hay algo que todavía permanece guardado.</h2>
+
+        <p>
+          Algunas cosas merecen conservarse en un lugar especial.
+          Esta vez, tendrás que decidir si realmente quieres descubrirlas.
+        </p>
+
+
+        <!-- ESTADO 1: CANDADO CERRADO -->
+        <div id="lock-screen">
+
+          <div class="lock-container">
+            <span id="lock-icon" class="lock-icon">🔒</span>
+          </div>
+
+          <h3 id="lock-title">Una última oportunidad...</h3>
+
+          <p id="lock-description">
+            Hay dos pequeños caminos. Puedes explorar el que quieras.
+          </p>
+
+          <button class="main-button" id="unlock-lock-button" type="button">
+            Abrir el candado
+          </button>
+
+          <p id="lock-closed-message" hidden>
+            El candado está cerrado.
+          </p>
+
+          <button
+            class="main-button"
+            id="continue-choice-button"
+            type="button"
+            hidden
+          >
+            Continuar con mi elección
+          </button>
+
+        </div>
+
+
+        <!-- ESTADO 2: ELEGIR UNA OPCIÓN -->
+        <div id="choice-screen" hidden>
+
+          <h2>¿Qué te gustaría encontrar?</h2>
+
+          <p>
+            Puedes elegir cualquiera de estos dos caminos.
+          </p>
+
+          <button
+            class="main-button choice-button"
+            id="memories-choice"
+            type="button"
+          >
+            Recordar un poquito de nosotros 💛
+          </button>
+
+          <button
+            class="main-button choice-button"
+            id="support-choice"
+            type="button"
+          >
+            ¿Te sientes mal o sola?
+          </button>
+
+        </div>
+
+
+        <!-- ESTADO 3: INGRESAR CONTRASEÑA -->
+        <div id="password-screen" hidden>
+
+          <h2 id="password-title">Ingresa la contraseña</h2>
+
+          <p id="password-description">
+            Necesitas una contraseña para continuar.
+          </p>
+
+          <form id="last-door-form" class="secret-form">
+
+            <label for="last-door-password">
+              Contraseña
+            </label>
+
+            <input
+              type="password"
+              id="last-door-password"
+              name="last-door-password"
+              placeholder="Escribe la contraseña"
+              autocomplete="off"
+              required
+            >
+
+            <button class="main-button" type="submit">
+              Desbloquear
+            </button>
+
+            <p
+              id="last-door-error"
+              class="form-message"
+              role="alert"
+              hidden
+            >
+              La contraseña no es correcta. Inténtalo nuevamente.
+            </p>
+
+          </form>
+
+          <button
+            class="back-button"
+            id="return-lock-button"
+            type="button"
+          >
+            ← Volver al candado
+          </button>
+
+        </div>
+
+
+        <!-- ESTADO 4A: MENSAJE DE RECUERDOS -->
+        <div id="memories-message" class="revealed-message" hidden>
+
+          <h2>Un poquito de nosotros</h2>
+
+          <p class="memories-intro">
+            Hay recuerdos que merecen quedarse.
+          </p>
+
+
+          <!-- 01 — EL COMIENZO -->
+          <article class="memory-part">
+
+            <span class="eyebrow">01 — EL COMIENZO</span>
+
+            <h3>¿Te acordás de aquel parque?</h3>
+
+            <p>
+              No sé si todavía recordás aquella primera vez que nos vimos,
+              cuando nuestras mamás nos llevaron al parque. Las bicicletas,
+              las vueltas por todos lados y aquellos señores que nos
+              regañaron porque casi los golpeábamos. Jajaja.
+            </p>
+
+            <p>
+              También recuerdo aquella noche en la que le conté a mi mamá
+              que me gustabas. Sin saberlo, estaba comenzando una historia
+              que terminaría significando muchísimo para mí.
+            </p>
+
+          </article>
+
+
+          <!-- 02 — FECHAS QUE NO OLVIDO -->
+          <article class="memory-part">
+
+            <span class="eyebrow">02 — FECHAS QUE NO OLVIDO</span>
+
+            <h3>Algunas fechas se quedaron conmigo.</h3>
+
+            <p>
+              El 30 de enero de 2024 me animé a escribirte por Instagram.
+              Estaba nervioso, aunque ya habíamos hablado antes.
+            </p>
+
+            <p>
+              Y cómo olvidar el 23 de diciembre: después de salir campeón
+              con mi equipo, a las 11:53 de la noche, mientras estábamos
+              en llamada, te pregunté si querías ser mi novia. Me dijiste
+              que sí y ese día se convirtió en uno de los más especiales
+              de mi vida.
+            </p>
+
+            <p>
+              Después de aquel primer capítulo, el 6 de junio volvimos
+              a intentarlo. Fue una segunda oportunidad llena de momentos
+              que todavía recuerdo con cariño.
+            </p>
+
+          </article>
+
+
+          <!-- 03 — LO QUE FUIMOS -->
+          <article class="memory-part">
+
+            <span class="eyebrow">03 — LO QUE FUIMOS</span>
+
+            <h3>Los pequeños detalles.</h3>
+
+            <p>
+              Recuerdo el 5 de julio, cuando nos vimos por primera vez
+              siendo novios. Tu primera visita a mi casa, lo nerviosa
+              que estabas y aquella vez que casi no quisiste comer. Jajaja.
+            </p>
+
+            <p>
+              Extraño las llamadas interminables, quedarnos dormidos
+              hablando, hacer tareas juntos, tus regaños por los
+              energizantes y contarte cómo me había ido en los partidos.
+            </p>
+
+            <p>
+              Quizá eran cosas normales para nosotros, pero nunca
+              imaginé cuánto llegaría a extrañarlas.
+            </p>
+
+          </article>
+
+
+          <!-- 04 — ALGO QUE QUEDÓ PENDIENTE -->
+          <article class="memory-part">
+
+            <span class="eyebrow">04 — ALGO QUE QUEDÓ PENDIENTE</span>
+
+            <h3>Una ilusión que tenía guardada.</h3>
+
+            <p>
+              Las dos veces que te pedí ser mi novia no pude hacerlo
+              como realmente hubiera querido. No tenía los medios
+              para prepararte algo especial ni pedirte que estuviéramos
+              juntos en persona.
+            </p>
+
+            <p>
+              Ahora que gano mi propio dinero tenía algo planeado:
+              el día que fuéramos a la playa quería pedirte que lo
+              intentáramos una vez más, esta vez con un detalle especial
+              y como siempre había imaginado.
+            </p>
+
+            <p>
+              Ese momento nunca llegó, pero quería que supieras que
+              alguna vez lo planeé con mucha ilusión.
+            </p>
+
+          </article>
+
+
+          <!-- 05 — LO QUE ME DEJASTE -->
+          <article class="memory-part">
+
+            <span class="eyebrow">05 — LO QUE ME DEJASTE</span>
+
+            <h3>También aprendí mucho de vos.</h3>
+
+            <p>
+              Aprendí a demostrar cariño, a tener paciencia y a valorar
+              los pequeños detalles. Me ayudaste a conocer una versión
+              de mí que no conocía y me motivaste a esforzarme por ser
+              mejor cada día.
+            </p>
+
+            <p>
+              Entendí que no hacen falta grandes cosas para compartir
+              momentos felices y que algunas personas llegan a enseñarnos
+              cosas que conservamos incluso cuando nuestros caminos cambian.
+            </p>
+
+          </article>
+
+
+          <!-- 06 — LO QUE ME QUEDO -->
+          <article class="memory-part">
+
+            <span class="eyebrow">06 — LO QUE ME QUEDO</span>
+
+            <h3>No necesito cambiar el presente para valorar el pasado.</h3>
+
+            <p>
+              Sé que ya no volveremos a ser lo que fuimos, aunque hubo
+              una parte de mí que deseó que las cosas fueran diferentes.
+            </p>
+
+            <p>
+              No escribo esto esperando algo a cambio. Solamente quería
+              que pudieras recordar un poquito de lo que vivimos y saber
+              que siempre voy a desearte cosas buenas.
+            </p>
+
+            <p>
+              Gracias por haber sido parte de una etapa tan importante
+              de mi vida.
+            </p>
+
+          </article>
+
+          <!-- GALERÍA DE FOTOGRAFÍAS -->
+          <div class="memory-gallery">
+
+            <span class="eyebrow">TRES RECUERDOS PARA CONSERVAR</span>
+
+            <h3>Algunos momentos merecen una fotografía.</h3>
+
+            <p>
+              Toca cada tarjeta para descubrir lo que guarda.
+            </p>
+
+            <div class="photo-gallery">
+
+              <!-- FOTO 1 -->
+              <button
+                class="photo-card"
+                type="button"
+                aria-label="Descubrir fotografía uno"
+                aria-pressed="false"
+              >
+
+                <span class="photo-card-inner">
+
+                  <span class="photo-card-back">
+                    <span>✦</span>
+                    <small>Foto 1</small>
+                  </span>
+
+                  <span class="photo-card-front">
+                    <img
+                      src="./IMG/4.jpeg"
+                      alt="Primer recuerdo"
+                    >
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- FOTO 2 -->
+              <button
+                class="photo-card"
+                type="button"
+                aria-label="Descubrir fotografía dos"
+                aria-pressed="false"
+              >
+
+                <span class="photo-card-inner">
+
+                  <span class="photo-card-back">
+                    <span>✦</span>
+                    <small>Foto 2</small>
+                  </span>
+
+                  <span class="photo-card-front">
+                    <img
+                      src="./IMG/3.jpeg"
+                      alt="Segundo recuerdo"
+                    >
+                  </span>
+
+                </span>
+
+              </button>
+
+
+              <!-- FOTO 3 -->
+              <button
+                class="photo-card"
+                type="button"
+                aria-label="Descubrir fotografía tres"
+                aria-pressed="false"
+              >
+
+                <span class="photo-card-inner">
+
+                  <span class="photo-card-back">
+                    <span>✦</span>
+                    <small>Foto 3</small>
+                  </span>
+
+                  <span class="photo-card-front">
+                    <img
+                      src="./IMG/1.jpeg"
+                      alt="Tercer recuerdo"
+                    >
+                  </span>
+
+                </span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- CIERRE DE LOS RECUERDOS -->
+          <div class="memory-closing">
+
+            <h3>Y así, siempre habrá algo que recordar.</h3>
+
+            <p>
+              Un capítulo que tuvo su momento y que merece ser
+              recordado con cariño.
+            </p>
+
+          </div>
+
+
+          <button
+            class="main-button finish-door-button"
+            type="button"
+          >
+            Cerrar esta puerta
+          </button>
+
+        </div>
+
+
+        <!-- ESTADO 4B: MENSAJE DE APOYO -->
+        <div id="support-message" class="revealed-message" hidden>
+
+          <h2>Un pequeño recordatorio 💛</h2>
+
+          <p>
+            Si llegaste hasta aquí, quiero que recuerdes algo:
+            incluso los días difíciles pasan y siempre hay nuevas
+            oportunidades para encontrar motivos para sonreír.
+          </p>
+
+          <p>
+            Espero que nunca olvides lo mucho que vales, que tengas
+            personas que te acompañen y que no te falten razones
+            para seguir persiguiendo tus sueños.
+          </p>
+
+          <p>
+            No tienes que tener todo resuelto hoy. Date tiempo,
+            cuídate mucho y recuerda que mereces cosas bonitas.
+          </p>
+
+
+          <!-- REPRODUCTOR DE AUDIO -->
+          <div class="special-audio">
+
+            <p class="audio-description">
+              Un pequeño audio para escuchar cuando quieras.
+            </p>
+
+            <audio id="special-audio">
+              <source
+                src="./AUDIO/recuerdo.mpeg"
+                type="audio/mpeg"
+              >
+              Tu navegador no admite audio.
+            </audio>
+
+            <button
+              id="special-audio-button"
+              class="audio-play-button"
+              type="button"
+              aria-label="Reproducir audio"
+            >
+
+              <span id="audio-button-label">
+                Reproducir
+              </span>
+
+              <span id="audio-play-icon">
+                ▶
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <button
+            class="main-button finish-door-button"
+            type="button"
+          >
+            Cerrar esta puerta
+          </button>
+
+        </div>
+
+
+        <button class="back-button" type="button" onclick="goBack()">
+          ← Volver
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- MÚSICA DE FONDO -->
+  <audio id="background-music" loop>
+    <source src="AUDIO/musica.mp3" type="audio/mpeg">
+    Tu navegador no admite audio.
+  </audio>
+
+  <button
+    id="music-button"
+    class="music-button"
+    type="button"
+    aria-label="Activar música"
+    aria-pressed="false"
+  >
+    ♫
+  </button>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="./JS/main.js"></script>
+  <script src="./JS/easter-egg.js"></script>
+
+</body>
+</html>
